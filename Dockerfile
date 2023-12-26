@@ -1,4 +1,4 @@
-FROM node:alphine3.10
+FROM node:latest
 WORKDIR /app
 COPY package.json /app
 RUN npm install
