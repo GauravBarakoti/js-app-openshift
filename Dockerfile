@@ -1,9 +1,13 @@
-FROM node:current-alpine
-USER node
+FROM node:14-alpine
+
 WORKDIR /app
-COPY package.json /app
-# RUN npm install
-RUN npm install -g npm@10.2.5
-COPY . /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
 EXPOSE 3001
+
 CMD [ "npm", "start" ]
